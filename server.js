@@ -5,7 +5,11 @@ const { Pool } = require("pg");
 const jwt = require("jsonwebtoken");
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 app.use(express.json());
 
 // ------------------- Conexión a la BD -------------------
