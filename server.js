@@ -41,6 +41,11 @@ function authMiddleware(req, res, next) {
   }
 }
 
+// 🔥 ------------------- PING PARA DESPERTAR RENDER -------------------
+app.get("/api/ping", (req, res) => {
+  res.status(200).json({ message: "Backend activo" });
+});
+
 // ------------------- Rutas -------------------
 app.use("/api/auth", require("./routes/auth")); // login y registro
 app.use("/api/actividades", require("./routes/actividades")); // CRUD actividades
